@@ -4,3 +4,6 @@ if status is-interactive
 end
 
 source $HOME/.config/fish/env.fish
+
+# functions
+source $HOME/.config/fish/functions/zoxide.fish
