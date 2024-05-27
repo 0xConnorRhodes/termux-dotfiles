@@ -11,3 +11,7 @@
 ## Ansible Controller
 1. `ssh-copy-id ph` (will prompt you with command to remove old known hosts)
 2. `ansible-playbook termux.yml`
+
+## In Termux
+### set font
+Long press window, select styling, choose "Cascadia Code" as font
