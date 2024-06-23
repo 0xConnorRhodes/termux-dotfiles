@@ -2,6 +2,9 @@ alias e="nvim"
 alias cm="chezmoi"
 alias gs="git status"
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
+alias ms="mosh s"
+
+# notes
 alias tk="lua $HOME/code/notes-scripts/tasks.lua"
 alias ntk="lua $HOME/code/notes-scripts/new-task.lua"
 
