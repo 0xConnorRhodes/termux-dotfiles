@@ -1,4 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/fish
+#!/bin/sh
 
-cd /data/data/com.termux/files/home/storage/dcim/notes
-fd .
+lua $HOME/.local/tasker/open-note.lua
