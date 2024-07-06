@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/fish
+
+cd /data/data/com.termux/files/home/storage/dcim/notes
+fd .
