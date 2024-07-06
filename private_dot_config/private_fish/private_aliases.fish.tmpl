@@ -3,6 +3,7 @@ alias cm="chezmoi"
 alias gs="git status"
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
 alias ms="mosh s"
+alias cat="bat --style=plain --pager=none"
 
 {{ if stat (joinPath .chezmoi.homeDir "code/notes-scripts/aliases.fish") }}
 # notes aliases
