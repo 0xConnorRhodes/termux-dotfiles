@@ -24,7 +24,7 @@ fi
 
 git add .
 
-git commit -q -m "Last Sync: $(date +"%Y-%m-%d %H:%M:%S")" > /dev/null && echo "pushed changes"
+git commit -q -m "Last Sync: $(date +"%Y-%m-%d %H:%M:%S")" > /dev/null && echo "pushed"
 
 git push -q
 
