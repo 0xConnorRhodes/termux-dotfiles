@@ -9,9 +9,9 @@ cd "$ZK_PATH"
 REMOTE_CHANGES="$(git remote update | wc -l)"
 
 if [ "$REMOTE_CHANGES" -gt 0 ]; then
-	echo "remote changes"
+	echo "pulling remote changes"
+	git pull -q
 fi
-
 
 LOCAL_CHANGES="$(git status --porcelain | wc -l)"
 
@@ -19,9 +19,8 @@ if [ "$LOCAL_CHANGES" -gt 0 ]; then
 	echo "local changes"
 else
 	echo "no local changes"
+	exit 0
 fi
-
-git pull -q
 
 git add .
 
