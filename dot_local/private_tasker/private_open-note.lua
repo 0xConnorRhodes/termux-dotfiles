@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/lua
 
-notesPath = os.getenv("HOME")..'/storage/dcim/notes'
+local notesPath = os.getenv("HOME")..'/storage/dcim/notes'
 
 local fzfFilesTbl = {}
 for file in io.popen(('ls %s'):format(notesPath)):lines() do
@@ -15,5 +15,5 @@ local fileChoiceStr = io.popen(
 
 local fileChoiceStrip = fileChoiceStr:sub(1, #fileChoiceStr-1)
 
-command = ('termux-open "%s"'):format(notesPath..'/'..fileChoiceStrip..'.md')
+local command = ('termux-open "%s"'):format(notesPath..'/'..fileChoiceStrip..'.md')
 os.execute(command)
