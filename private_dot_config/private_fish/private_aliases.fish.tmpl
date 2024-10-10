@@ -7,10 +7,8 @@ alias cat="bat --style=plain --pager=none"
 alias sn="screen -c $HOME/.config/screen/screenrc"
 alias py="python3"
 
-{{ if stat (joinPath .chezmoi.homeDir "code/notes-scripts/aliases.fish") }}
 # notes aliases
-source $HOME/code/notes-scripts/aliases.fish
-{{ end }}
+alias tk="ruby $HOME/code/notes-scripts/tasks-menu-phone.rb"
 
 # navigation
 alias x="exit"

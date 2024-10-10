@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/lua
 
-local notesPath = os.getenv("HOME")..'/storage/dcim/notes'
+local notesPath = os.getenv("HOME")..'/storage/dcim/box/notes'
 
 local fzfFilesTbl = {}
 for file in io.popen(('ls %s'):format(notesPath)):lines() do
