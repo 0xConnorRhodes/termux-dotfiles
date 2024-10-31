@@ -3,7 +3,7 @@
 require 'open3'
 
 remote_path = 's:/zstore/media/music/music_library/music_library/'
-local_folder = File.expand_path('~/music/')
+local_folder = File.expand_path('~/storage/music/music_library/')
 
 rsync_command = "rsync -rhP '#{remote_path}' '#{local_folder}'"
 
