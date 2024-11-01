@@ -5,6 +5,7 @@ require 'open3'
 remote_path = 's:/zstore/media/music/music_library/music_library/'
 local_folder = File.expand_path('~/storage/music/music_library/')
 
+# --delete: remove detination files not present in the source
 rsync_command = "rsync -rhP --delete '#{remote_path}' '#{local_folder}'"
 
 # Run the rsync command and display live output
