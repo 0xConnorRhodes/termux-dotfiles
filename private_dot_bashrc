@@ -1,6 +1,0 @@
-if [[ $- != *i* ]] ; then
-    # Shell is non-interactive.  Be done now!
-    return
-fi
-
-exec /data/data/com.termux/files/usr/bin/fish
