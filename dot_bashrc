@@ -12,7 +12,7 @@ alias ms="mosh s"
 #alias cat="bat --style=plain --pager=none"
 #alias sn="screen -c $HOME/.config/screen/screenrc"
 #alias py="python3"
-alias rb="ruby"
+#alias rb="ruby"
 alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
 
 # notes aliases
@@ -23,5 +23,5 @@ alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
 
 # navigation
 alias x="exit"
-alias j="__zoxide_z"
-alias ji="__zoxide_zi"
+#alias j="__zoxide_z"
+#alias ji="__zoxide_zi"
