@@ -7,10 +7,13 @@ alias cat="bat --style=plain --pager=none"
 alias sn="screen -c $HOME/.config/screen/screenrc"
 alias py="python3"
 alias rb="ruby"
+alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
 
 # notes aliases
 alias tk="ruby $HOME/code/notes-scripts/tasks-menu-phone.rb"
 alias mt="ruby $HOME/code/notes-scripts/new-meeting.rb"
+alias ns="ruby $HOME/code/notes-scripts/notes-sync.rb"
+alias cb="ruby $HOME/code/food-log/add_entry.rb"
 
 # navigation
 alias x="exit"
