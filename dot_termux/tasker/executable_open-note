@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd $HOME/notes
+
+choice="$(fd . | fzf | sed 's/\.md$//')"
+
+termux-open "$choice.md"
