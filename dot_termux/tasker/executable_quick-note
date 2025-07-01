@@ -1,0 +1,16 @@
+#!/bin/sh
+
+template="# "
+
+drafts_dir="${HOME}/notes/df"
+
+mkdir -p "${drafts_dir}"
+
+time=$(date +%y%m%d%H%M%S)
+
+file_path="${drafts_dir}/${time}.md"
+
+# print template as %s followed by 2 \n
+printf "%s\n\n" "$template" > "${file_path}"
+
+termux-open "${file_path}"
