@@ -1,4 +1,4 @@
-alias e="nvim"
+alias e="vim"
 alias cm="chezmoi"
 alias gs="git status"
 alias fe='vim "$(fd -t f . | fzf)"'
