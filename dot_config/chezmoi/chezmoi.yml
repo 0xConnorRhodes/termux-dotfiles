@@ -1,0 +1,4 @@
+encryption: age
+age:
+  identity: ~/.local/.secret/age-termux-key.txt
+  recipient: age1nd9fw5fug4n0uujrvjj63zvqkqp2ha93dc9wnpw3uq7ppx8n7cxqpncnu2
