@@ -11,3 +11,4 @@ source $HOME/.config/fish/env.fish
 
 # functions
 source $HOME/.config/fish/functions/zoxide.fish
+source $HOME/.config/fish/functions/sage.fish
