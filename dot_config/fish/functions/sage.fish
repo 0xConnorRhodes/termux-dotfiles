@@ -9,6 +9,5 @@ function sage
     read -P "termux age key: " secret_input
 
     echo "$secret_input" > "$secret_file"
-    chezmoi update --apply
-    chezmoi update --apply
+    chezmoi apply
 end
