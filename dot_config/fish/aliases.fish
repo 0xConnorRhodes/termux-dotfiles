@@ -12,7 +12,7 @@ alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
 #alias rb="ruby"
 
 # notes aliases
-alias tk="ruby $HOME/code/notes-scripts/tasks-menu-phone.rb"
+alias tk="ruby $HOME/code/scripts/bin/tk"
 alias mt="ruby $HOME/code/scripts/bin/mt"
 alias cb="ruby $HOME/code/food-log/add_entry.rb"
 
