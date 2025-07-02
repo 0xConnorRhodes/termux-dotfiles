@@ -4,7 +4,7 @@
 
 # ALIASES
 alias e="vim"
-alias fe="vim \"$(fd -t f . | fzf)\""
+alias fe='vim "$(fd -t f . | fzf)"'
 alias cm="chezmoi"
 alias gs="git status"
 #alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
