@@ -3,38 +3,4 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-exec zsh
-
-# # ENV
-# #set --export PATH $HOME/.local/bin $HOME/code/scripts/phone $PATH
-# #set --export NOTESDIR $HOME/storage/dcim/notes
-
-# # ALIASES
-# alias e="vim"
-# alias fe='vim "$(fd -t f . | fzf)"'
-# alias cm="chezmoi"
-# alias gs="git status"
-# #alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
-# alias cmd="chezmoi cd"
-# alias cmu="chezmoi update --apply"
-# #alias ms="mosh s"
-# #alias cat="bat --style=plain --pager=none"
-# #alias sn="screen -c $HOME/.config/screen/screenrc"
-# #alias py="python3"
-# #alias rb="ruby"
-# alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
-
-# # notes aliases
-# #alias tk="ruby $HOME/code/notes-scripts/tasks-menu-phone.rb"
-# #alias mt="ruby $HOME/code/notes-scripts/new-meeting.rb"
-# #alias ns="ruby $HOME/code/notes-scripts/notes-sync.rb"
-# #alias cb="ruby $HOME/code/food-log/add_entry.rb"
-
-# # navigation
-# alias x="exit"
-# #alias j="__zoxide_z"
-# #alias ji="__zoxide_zi"
-
-# # prompt
-# PROMPT_DIRTRIM=2
-# PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;97m\]\$\[\e[0m\] '
+exec fish
