@@ -4,15 +4,15 @@ cd $HOME/notes
 
 script_timeout=20
 
-# Alternative approach: use exec to replace the shell process
+# fork code block that will wait and kill this shell if sleep timer finishesl
 {
     sleep $script_timeout
-    # Kill the process group to ensure fzf is terminated
+    # kill the process group to ensure fzf is terminated
     kill -TERM 0 2>/dev/null
 } &
 timeout_pid=$!
 
-# This will replace the current shell process
+# exec replaces current shell so previous fork will kill *this* shell if sleep timer finishes
 exec sh -c '
     choice="$(fd . | fzf | sed 's/\.md$//')"
     kill '$timeout_pid' 2>/dev/null
