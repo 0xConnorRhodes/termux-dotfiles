@@ -2,6 +2,40 @@
 
 cd $HOME/notes
 
-choice="$(fd . | fzf | sed 's/\.md$//')"
+script_timeout=20
+
+# Create a named pipe for communication
+pipe="/tmp/fzf_pipe.$$"
+mkfifo "$pipe"
+
+# Start fzf in background and capture its PID
+{
+    choice="$(fd . | fzf | sed 's/\.md$//')"
+    echo "$choice" > "$pipe"
+    kill $timeout_pid 2>/dev/null
+} &
+fzf_pid=$!
+
+# Start timeout process in background
+{
+    sleep 20
+    kill $fzf_pid 2>/dev/null
+    echo "" > "$pipe"  # Send empty result to unblock read
+} &
+timeout_pid=$!
+
+# Wait for fzf to complete and read the choice
+choice="$(cat "$pipe")"
+
+# Kill timeout process if still running
+kill $timeout_pid 2>/dev/null
+
+# Clean up the named pipe
+rm -f "$pipe"
+
+# Exit if no choice was made (fzf timed out or user cancelled)
+if [ -z "$choice" ]; then
+    exit 0
+fi
 
 termux-open "$choice.md"
