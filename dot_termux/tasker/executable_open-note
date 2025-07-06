@@ -2,40 +2,21 @@
 
 cd $HOME/notes
 
-script_timeout=20
+script_timeout=10
 
-# Create a named pipe for communication
-pipe="/tmp/fzf_pipe.$$"
-mkfifo "$pipe"
-
-# Start fzf in background and capture its PID
+# Alternative approach: use exec to replace the shell process
 {
-    choice="$(fd . | fzf | sed 's/\.md$//')"
-    echo "$choice" > "$pipe"
-    kill $timeout_pid 2>/dev/null
-} &
-fzf_pid=$!
-
-# Start timeout process in background
-{
-    sleep 20
-    kill $fzf_pid 2>/dev/null
-    echo "" > "$pipe"  # Send empty result to unblock read
+    sleep $script_timeout
+    # Kill the process group to ensure fzf is terminated
+    kill -TERM 0 2>/dev/null
 } &
 timeout_pid=$!
 
-# Wait for fzf to complete and read the choice
-choice="$(cat "$pipe")"
-
-# Kill timeout process if still running
-kill $timeout_pid 2>/dev/null
-
-# Clean up the named pipe
-rm -f "$pipe"
-
-# Exit if no choice was made (fzf timed out or user cancelled)
-if [ -z "$choice" ]; then
-    exit 0
-fi
-
-termux-open "$choice.md"
+# This will replace the current shell process
+exec sh -c '
+    choice="$(fd . | fzf | sed 's/\.md$//')"
+    kill '$timeout_pid' 2>/dev/null
+    if [ -n "$choice" ]; then
+        termux-open "$choice.md"
+    fi
+'
