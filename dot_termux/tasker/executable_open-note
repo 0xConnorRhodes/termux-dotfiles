@@ -2,7 +2,7 @@
 
 cd $HOME/notes
 
-script_timeout=10
+script_timeout=20
 
 # Alternative approach: use exec to replace the shell process
 {
