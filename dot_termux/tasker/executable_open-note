@@ -16,7 +16,5 @@ timeout_pid=$!
 exec sh -c '
     choice="$(fd . | fzf | sed 's/\.md$//')"
     kill '$timeout_pid' 2>/dev/null
-    if [ -n "$choice" ]; then
-        termux-open "$choice.md"
-    fi
+    termux-open "$choice.md"
 '
