@@ -1,6 +1,5 @@
 alias e="vim"
 alias cm="chezmoi"
-alias gs="git status"
 alias fe='vim "$(fd -t f . | fzf)"'
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
 alias cmu="chezmoi update --apply"
@@ -11,6 +10,18 @@ alias ms="mosh m"
 #alias sn="screen -c $HOME/.config/screen/screenrc"
 #alias py="python3"
 #alias rb="ruby"
+
+# git
+alias gs="git status"
+alias gc="git commit"
+
+function ga
+    if count $argv > 0
+        git add $argv
+    else
+        git add .
+    end
+end
 
 # notes aliases
 alias tk="ruby $HOME/code/scripts/bin/tk"
