@@ -24,7 +24,7 @@ alias gd="git diff --quiet && git diff --cached || git diff"
 
 function g
   if count $argv > 0
-    git "$@"
+    git $argv
   else
     git status --short
   end
