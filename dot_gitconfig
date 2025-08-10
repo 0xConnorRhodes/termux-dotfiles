@@ -1,5 +1,19 @@
+[alias]
+    a = "!git add ${1:-.}"
+    d = "!git diff --quiet && git diff --cached || git diff"
+
 [user]
 	email = connor@rhodes.contact
 	name = Connor Rhodes
 [safe]
 	directory = /storage/emulated/0/DCIM/notes
+
+[init]
+    defaultBranch = "main"
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+    default = "current"

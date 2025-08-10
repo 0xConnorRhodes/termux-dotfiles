@@ -3,8 +3,6 @@ alias cm="chezmoi"
 alias fe='vim "$(fd -t f . | fzf)"'
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
 alias cmu="chezmoi update --apply"
-alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
-alias gcam="git commit -a -m"
 alias ms="mosh m"
 #alias cat="bat --style=plain --pager=none"
 #alias sn="screen -c $HOME/.config/screen/screenrc"
@@ -14,13 +12,30 @@ alias ms="mosh m"
 # git
 alias gs="git status"
 alias gc="git commit"
+alias gmm="git add . && git commit -m 'u' && git rebase --continue && git push"
+alias gcam="git commit -a -m"
+alias gp="git push"
+alias gu="git pull"
+alias gl="git log"
+alias gb="git branch"
+alias gi="git init"
+alias gcl="git clone"
+alias gd="git diff --quiet && git diff --cached || git diff"
+
+function g
+  if count $argv > 0
+    git "$@"
+  else
+    git status --short
+  end
+end
 
 function ga
-    if count $argv > 0
-        git add $argv
-    else
-        git add .
-    end
+  if count $argv > 0
+    git add $argv
+  else
+    git add .
+  end
 end
 
 # notes aliases
