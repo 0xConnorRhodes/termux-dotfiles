@@ -3,7 +3,7 @@ alias cm="chezmoi"
 alias fe='vim "$(fd -t f . | fzf)"'
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
 alias cmu="chezmoi update --apply"
-alias ms="mosh m"
+alias mm="et -p 63104 m"
 #alias cat="bat --style=plain --pager=none"
 #alias sn="screen -c $HOME/.config/screen/screenrc"
 #alias py="python3"
