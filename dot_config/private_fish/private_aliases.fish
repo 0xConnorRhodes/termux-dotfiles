@@ -1,4 +1,4 @@
-alias e="vim"
+alias e="nvim"
 alias cm="chezmoi"
 alias fe='vim "$(fd -t f . | fzf)"'
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
