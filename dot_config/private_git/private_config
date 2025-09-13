@@ -1,0 +1,40 @@
+[alias]
+	a = "!git add ${1:-.}"
+	b = "branch"
+	c = "commit"
+	cl = "clone"
+	co = "checkout"
+	d = "!git diff --quiet && git diff --cached || git diff"
+	i = "init"
+	l = "log"
+	p = "push"
+	s = "status"
+	u = "pull"
+
+[core]
+	compression = 9
+	preloadIndex = true
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = "current"
+
+[status]
+	showStash = true
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+
+[url "git@github.com:0xConnorRhodes/"]
+	insteadOf = "c:"
+
+[user]
+	email = "connor@rhodes.contact"
+	name = "Connor Rhodes"
+
