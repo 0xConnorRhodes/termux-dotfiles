@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DATE_STR=$(date +%y%m%d)
+FILE_PATH=~/notes/s/cal_budget-${DATE_STR}.md
+
+termux-open "$FILE_PATH"
