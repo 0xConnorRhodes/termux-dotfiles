@@ -4,6 +4,7 @@ alias fe='vim "$(fd -t f . | fzf)"'
 alias cmd="SHELL=/data/data/com.termux/files/usr/bin/fish chezmoi cd"
 alias cmu="chezmoi update --apply"
 alias mm="et -p 63104 m"
+alias sn="screen -c $HOME/.config/screen/screenrc"
 #alias cat="bat --style=plain --pager=none"
 #alias sn="screen -c $HOME/.config/screen/screenrc"
 #alias py="python3"
