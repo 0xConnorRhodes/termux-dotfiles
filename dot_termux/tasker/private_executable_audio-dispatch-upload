@@ -1,0 +1,78 @@
+#!/data/data/com.termux/files/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+# ]
+# ///
+"""
+Script Requirements:
+- As a user, I want to check for connectivity to a remote server 's' before attempting file uploads.
+- As a user, I want the script to print 'no connectivity' to stdout and exit if the server is unreachable.
+- As a user, I want to upload all files from '/data/data/com.termux/files/home/storage/dcim/audio_dispatch' to 'm:/scary/files/share/audio_dispatch' using rsync.
+- As a user, I want the local files to be deleted after they are successfully uploaded (a 'move' operation).
+- As a user, I want the script to print 'error' to stdout if any unexpected error occurs.
+- As a user, I want the script to print 'uploaded' to stdout if the entire operation is successful.
+- As a user, I want all error messages printed to stdout.
+"""
+
+import subprocess
+import sys
+
+LOCAL_DIR = "/data/data/com.termux/files/home/storage/dcim/audio_dispatch/"
+REMOTE_HOST = "m"
+REMOTE_DIR = "m:/scary/files/share/audio_dispatch/"
+
+def check_connectivity():
+    try:
+        conn_check = subprocess.run(
+            [
+                "ssh",
+                "-o", "BatchMode=yes",
+                "-o", "ConnectTimeout=5",
+                REMOTE_HOST,
+                "exit"
+            ],
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        return conn_check.returncode == 0
+    except FileNotFoundError:
+        return False # 'ssh' command not found
+    except Exception:
+        return False
+
+def sync_files():
+    try:
+        subprocess.run(
+            [
+                "rsync",
+                "-a",
+                "--remove-source-files",
+                LOCAL_DIR,
+                REMOTE_DIR
+            ],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        return True
+    except (FileNotFoundError, subprocess.CalledProcessError, Exception):
+        return False
+
+def main():
+    if not check_connectivity():
+        print("no connectivity", end='', file=sys.stdout)
+        return
+
+    if sync_files():
+        print("uploaded", end='', file=sys.stdout)
+    else:
+        print("error", end='', file=sys.stdout)
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        print("error", end='', file=sys.stdout)
+
