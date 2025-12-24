@@ -1,9 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/env -S uv run --script
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-# ]
-# ///
+#!/data/data/com.termux/files/usr/bin/python3
 """
 Script Requirements:
 - As a user, I want to check for connectivity to a remote server 's' before attempting file uploads.
