@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd $HOME/notes
+
+choice="$(fd . | fzf | sed 's/\.md$//')"
+printf "$choice"
