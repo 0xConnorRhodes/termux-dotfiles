@@ -2,6 +2,8 @@
 
 set -e
 
+pip install pyaml
+
 cd ~/code
 
 git clone c:food-log.git
