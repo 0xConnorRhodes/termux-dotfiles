@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+cd ~/code
+
+git clone c:food-log.git
