@@ -3,7 +3,7 @@
 # Bootstrap
 ## In Termux 
 1. `termux-change-repo` (select default options)
-2. `curl -sSL sfs.connorrhodes.com/bootstrap/termux | bash`
+2. `curl -sSL https://bootstrap.connor.engineer/termux | sh`
 3. `passwd` (set password)
 
 ## for ssh access
